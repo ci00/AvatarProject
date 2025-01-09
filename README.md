@@ -1,5 +1,6 @@
 # AvatarProject
-
+The AvatarProject is my seminar project at university (KIT). It is not yet due, so it's not the final version of the project. I am still learning and trying to figure out solutions for my problems.
+Thank you for your understanding!
 
 
 ## Getting started
