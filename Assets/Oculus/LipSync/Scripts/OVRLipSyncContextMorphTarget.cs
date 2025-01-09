@@ -74,7 +74,7 @@ public class OVRLipSyncContextMorphTarget : MonoBehaviour
     public float laughterMultiplier = 1.5f;
 
     // smoothing amount
-    [Range(1, 100)]
+    [Range(1, 1)]
     [Tooltip("Smoothing of 1 will yield only the current predicted viseme, 100 will yield an extremely smooth viseme response.")]
     public int smoothAmount = 70;
 
@@ -147,7 +147,7 @@ public class OVRLipSyncContextMorphTarget : MonoBehaviour
         {
             for (int i = 0; i < OVRLipSync.VisemeCount; ++i)
             {
-                CheckVisemeKey(visemeTestKeys[i], i, 100);
+                CheckVisemeKey(visemeTestKeys[i], i, 1);
             }
         }
 
@@ -166,7 +166,7 @@ public class OVRLipSyncContextMorphTarget : MonoBehaviour
                 // Viseme blend weights are in range of 0->1.0, we need to make range 100
                 skinnedMeshRenderer.SetBlendShapeWeight(
                     visemeToBlendTargets[i],
-                    frame.Visemes[i] * 100.0f);
+                    frame.Visemes[i] * 1.0f);
             }
         }
     }
@@ -188,7 +188,7 @@ public class OVRLipSyncContextMorphTarget : MonoBehaviour
 
             skinnedMeshRenderer.SetBlendShapeWeight(
                 laughterBlendTarget,
-                laughterScore * 100.0f);
+                laughterScore * 1.0f);
         }
     }
 
@@ -217,7 +217,7 @@ public class OVRLipSyncContextMorphTarget : MonoBehaviour
     {
         if (Input.GetKeyDown(laughterKey))
         {
-            lipsyncContext.SetLaughterBlend(100);
+            lipsyncContext.SetLaughterBlend(1);
         }
         if (Input.GetKeyUp(laughterKey))
         {
